@@ -57,7 +57,7 @@ export default function Print() {
         </FormControl>
         {pageRange === 'Custom' && (
           <Box display="flex">
-            <FormControl>
+            <FormControl className={classes.rightSpacing}>
               <TextField label="From" />
             </FormControl>
             <FormControl>
@@ -73,7 +73,7 @@ export default function Print() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: theme.spacing(40),
+    width: theme.spacing(50),
   },
   container: {
     display: 'flex',
@@ -83,5 +83,8 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     marginTop: theme.spacing(3),
+  },
+  rightSpacing: {
+    marginRight: theme.spacing(3),
   },
 }))
