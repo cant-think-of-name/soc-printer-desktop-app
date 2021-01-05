@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, FormControl, InputLabel, MenuItem, Select, Typography, makeStyles } from '@material-ui/core';
+import { Box, Button, FormControl, FormLabel, FormControlLabel, InputLabel, MenuItem, Select, Radio, RadioGroup, Typography, makeStyles } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
 export default function Print() {
@@ -12,6 +12,11 @@ export default function Print() {
   const pageNumberList = [1, 2, 4, 8];
   const [numberOfPages, setNumberOfPages] = React.useState(pageNumberList[0]);
   const handleChangePages = (event) => setNumberOfPages(event.target.value);
+
+  const pageRangeOptions = ['All', 'Custom'];
+  const [pageRange, setPageRange] = React.useState(pageRangeOptions[0]);
+  const handleChangePageRange = (event) => setPageRange(event.target.value);
+
   return (
     <Box className={classes.root}>
       <Typography variant="h1">Print a document</Typography>
@@ -39,6 +44,15 @@ export default function Print() {
         >
           {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
         </Select>
+      </FormControl>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Page Range</FormLabel>
+        <RadioGroup row value={pageRange} onChange={handleChangePageRange}>
+          {pageRangeOptions.map(option => (
+            <FormControlLabel value={option} control={<Radio />} label={option} />
+            )
+          )}
+        </RadioGroup>
       </FormControl>
     </Box>
   )
