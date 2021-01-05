@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@material-ui/core';
+import { Box, Button, FormControl, InputLabel, MenuItem, Select, Typography, makeStyles } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
 export default function Print() {
+  const classes = useStyles();
   const printerList = ['psc008', 'psc011'];
   const [selectedPrinter, setSelectedPrinter] = React.useState(printerList[0]);
   const handleChangePrinter = (event) => setSelectedPrinter(event.target.value);
   return (
-    <>
+    <Box className={classes.root}>
       <Typography variant="h1">Print a document</Typography>
       <Button
         variant="contained"
@@ -26,6 +27,14 @@ export default function Print() {
           {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
         </Select>
       </FormControl>
-    </>
+    </Box>
   )
 }
+
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: 'fit-content',
+  },
+}))
