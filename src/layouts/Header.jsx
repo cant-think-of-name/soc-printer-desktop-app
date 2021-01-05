@@ -4,7 +4,7 @@ import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
 export default function Header() {
   const classes = useStyles()
   return (
-    <AppBar>
+    <AppBar position="relative">
       <Toolbar className={classes.root}>
         SOC Printer App
       </Toolbar>
