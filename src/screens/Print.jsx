@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, FormControl, FormLabel, FormControlLabel, InputLabel, MenuItem, Select, Radio, RadioGroup, TextField, Typography, makeStyles } from '@material-ui/core';
+import { Box, Button, Card, FormControl, FormLabel, FormControlLabel, InputLabel, MenuItem, Select, Radio, RadioGroup, TextField, Typography, makeStyles } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
 export default function Print() {
@@ -18,64 +18,70 @@ export default function Print() {
   const handleChangePageRange = (event) => setPageRange(event.target.value);
   
   return (
-    <Box className={classes.root}>
-      <Typography variant="h1">Print a document</Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        startIcon={<Add />}
-      >
-        Upload file
-      </Button>
-      <FormControl className={classes.formControl}>
-        <InputLabel>Choose Printer</InputLabel>
-        <Select
-          value={selectedPrinter}
-          onChange={handleChangePrinter}
+    <Card className={classes.root}>
+      <Box className={classes.container}>
+        <Typography variant="h1">Print a document</Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<Add />}
         >
-          {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel>Pages per sheet</InputLabel>
-        <Select
-          value={numberOfPages}
-          onChange={handleChangePages}
-        >
-          {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
-        </Select>
-      </FormControl>
-      <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Page Range</FormLabel>
-        <RadioGroup row value={pageRange} onChange={handleChangePageRange}>
-          {pageRangeOptions.map(option => (
-            <FormControlLabel value={option} control={<Radio />} label={option} />
-            )
-          )}
-        </RadioGroup>
-      </FormControl>
-      {pageRange === 'Custom' && (
-        <Box display="flex">
-          <FormControl>
-            <TextField label="From" />
-          </FormControl>
-          <FormControl>
-            <TextField label="To" />
-          </FormControl>
-        </Box>
-      )}
-      <Button variant="contained" color="primary">Print</Button>
-    </Box>
+          Upload file
+        </Button>
+        <FormControl className={classes.formControl}>
+          <InputLabel>Choose Printer</InputLabel>
+          <Select
+            value={selectedPrinter}
+            onChange={handleChangePrinter}
+          >
+            {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel>Pages per sheet</InputLabel>
+          <Select
+            value={numberOfPages}
+            onChange={handleChangePages}
+          >
+            {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
+          </Select>
+        </FormControl>
+        <FormControl component="fieldset" className={classes.formControl}>
+          <FormLabel component="legend">Page Range</FormLabel>
+          <RadioGroup row value={pageRange} onChange={handleChangePageRange}>
+            {pageRangeOptions.map(option => (
+              <FormControlLabel value={option} control={<Radio />} label={option} />
+              )
+            )}
+          </RadioGroup>
+        </FormControl>
+        {pageRange === 'Custom' && (
+          <Box display="flex">
+            <FormControl>
+              <TextField label="From" />
+            </FormControl>
+            <FormControl>
+              <TextField label="To" />
+            </FormControl>
+          </Box>
+        )}
+        <Button variant="contained" color="primary">Print</Button>
+      </Box>
+    </Card>
   )
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: theme.spacing(40),
+  },
+  container: {
     display: 'flex',
     flexDirection: 'column',
     width: 'fit-content',
+    alignItems: 'flex-start',
   },
   formControl: {
     marginTop: theme.spacing(3),
-  }
+  },
 }))
