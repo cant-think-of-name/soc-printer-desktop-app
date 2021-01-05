@@ -64,6 +64,7 @@ export default function Print() {
           </FormControl>
         </Box>
       )}
+      <Button variant="contained" color="primary">Print</Button>
     </Box>
   )
 }
