@@ -6,7 +6,7 @@ export default createMuiTheme({
   ...palette,
   ...typography,
   overrides: {
-    MuiPaper: {
+    MuiCard: {
       root: {
         padding: "1.6rem",
       },
