@@ -1,9 +1,19 @@
 import React from 'react'
+import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
 
 export default function Header() {
+  const classes = useStyles()
   return (
-    <div>
-      Header
-    </div>
+    <AppBar>
+      <Toolbar className={classes.root}>
+        SOC Printer App
+      </Toolbar>
+    </AppBar>
   )
 }
+
+const useStyles = makeStyles(() => ({
+  root: {
+    left: 0,
+  },
+}))
