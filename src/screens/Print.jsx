@@ -8,6 +8,10 @@ export default function Print() {
   const printerList = ['psc008', 'psc011'];
   const [selectedPrinter, setSelectedPrinter] = React.useState(printerList[0]);
   const handleChangePrinter = (event) => setSelectedPrinter(event.target.value);
+
+  const pageNumberList = [1, 2, 4, 8];
+  const [numberOfPages, setNumberOfPages] = React.useState(pageNumberList[0]);
+  const handleChangePages = (event) => setNumberOfPages(event.target.value);
   return (
     <Box className={classes.root}>
       <Typography variant="h1">Print a document</Typography>
@@ -25,6 +29,15 @@ export default function Print() {
           onChange={handleChangePrinter}
         >
           {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
+        </Select>
+      </FormControl>
+      <FormControl>
+        <InputLabel>Pages per sheet</InputLabel>
+        <Select
+          value={numberOfPages}
+          onChange={handleChangePages}
+        >
+          {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
         </Select>
       </FormControl>
     </Box>
