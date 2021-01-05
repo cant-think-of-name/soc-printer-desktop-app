@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import { Header, Body, Footer } from "./layouts";
+import theme from "./theme";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Body />
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }
