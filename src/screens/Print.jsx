@@ -27,7 +27,7 @@ export default function Print() {
       >
         Upload file
       </Button>
-      <FormControl>
+      <FormControl className={classes.formControl}>
         <InputLabel>Choose Printer</InputLabel>
         <Select
           value={selectedPrinter}
@@ -36,7 +36,7 @@ export default function Print() {
           {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
         </Select>
       </FormControl>
-      <FormControl>
+      <FormControl className={classes.formControl}>
         <InputLabel>Pages per sheet</InputLabel>
         <Select
           value={numberOfPages}
@@ -45,7 +45,7 @@ export default function Print() {
           {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
         </Select>
       </FormControl>
-      <FormControl component="fieldset">
+      <FormControl component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Page Range</FormLabel>
         <RadioGroup row value={pageRange} onChange={handleChangePageRange}>
           {pageRangeOptions.map(option => (
@@ -69,10 +69,13 @@ export default function Print() {
   )
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
     width: 'fit-content',
   },
+  formControl: {
+    marginTop: theme.spacing(3),
+  }
 }))
