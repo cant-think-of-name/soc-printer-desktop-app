@@ -1,9 +1,19 @@
 import React from 'react';
 
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
+import { Add } from '@material-ui/icons';
 
 export default function Print() {
   return (
-    <Typography variant="h1">Print a document</Typography>
+    <>
+      <Typography variant="h1">Print a document</Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<Add />}
+      >
+        Upload file
+      </Button>
+    </>
   )
 }
