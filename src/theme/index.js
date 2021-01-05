@@ -14,6 +14,7 @@ export default createMuiTheme({
     MuiButton: {
       root: {  
         marginTop: "0.5rem",
+        borderRadius: "100px",
         textTransform: "none",
       },
     },
