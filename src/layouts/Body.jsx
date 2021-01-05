@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Print } from '../screens';
 
 export default function Body() {
   return (
     <div>
-      Body
+      <Print />
     </div>
   )
 }
