@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Button, Card, FormControl, FormLabel, FormControlLabel, InputLabel, MenuItem, Select, Radio, RadioGroup, TextField, Typography, makeStyles } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
-export default function Print() {
+export default function PrintPreview() {
   const classes = useStyles();
   const printerList = ['psc008', 'psc011'];
   const [selectedPrinter, setSelectedPrinter] = React.useState(printerList[0]);
