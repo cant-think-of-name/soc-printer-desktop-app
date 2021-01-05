@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
+
+import { Typography } from '@material-ui/core';
 
 export default function Print() {
   return (
-    <div>
-      <h1>Print a document</h1>
-    </div>
+    <Typography variant="h1">Print a document</Typography>
   )
 }
