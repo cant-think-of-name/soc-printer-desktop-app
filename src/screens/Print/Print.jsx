@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Container, makeStyles } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 import PrintSettings from './PrintSettings';
 import PrintPreview from './PrintPreview';
 import PrintQuota from './PrintQuota';
