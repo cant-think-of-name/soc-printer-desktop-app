@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'grid',
     gridTemplateAreas: `
-    "quota queue"
-    "links queue"
-    "settings preview"
+    "quota queue queue"
+    "links queue queue"
+    "settings preview preview"
     `,
     [theme.breakpoints.down('sm')]: {
       gridTemplateAreas: `

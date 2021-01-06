@@ -28,13 +28,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gridArea: "quota",
+    columnGap: theme.spacing(3),
     textAlign: 'center',
     '& .MuiSvgIcon-root': {
       width: '3rem',
       height: '3rem',
     },
-  },
-  rightSpacing: {
-    marginRight: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      gridTemplateColumns: 'unset',
+      gridTemplateRows: '1fr 1fr',
+      columnGap: 'unset',
+      gridRowGap: theme.spacing(3),
+    },
   },
 }))
