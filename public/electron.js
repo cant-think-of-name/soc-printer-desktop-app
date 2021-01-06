@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 
@@ -28,4 +28,14 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
+})
+ipcMain.handle("open-file", async () => {
+  const res = await dialog.showOpenDialog({
+    properties: ['openFile'],
+    filters: [{
+      name: 'All Files',
+      extensions: ['*'],
+    }],
+  });
+  return res;
 })

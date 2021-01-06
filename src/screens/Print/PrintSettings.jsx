@@ -4,8 +4,11 @@ import { Box, Button, Card, FormControl, FormLabel, FormControlLabel, InputLabel
 import { Add } from '@material-ui/icons';
 import { useHandleChange } from 'hooks';
 
+const { ipcRenderer } = window.require("electron");
+
 export default function PrintSettings() {
   const classes = useStyles();
+  const [fileName, setFileName] = React.useState('');
   const printerList = ['psc008', 'psc011'];
   const [selectedPrinter, handleChangePrinter] = useHandleChange(printerList[0]);
 
@@ -14,18 +17,33 @@ export default function PrintSettings() {
 
   const pageRangeOptions = ['All', 'Custom'];
   const [pageRange, handleChangePageRange] = useHandleChange(pageRangeOptions[0]);
+
+  const getFileName = async () => {
+    ipcRenderer.invoke("open-file")
+      .then(({ cancelled, filePaths: [filePath] }) => {
+        if (!cancelled) {
+          const trimmedFilePath = filePath.split("/");
+          setFileName(trimmedFilePath[trimmedFilePath.length - 1]);
+        }
+      });
+  };
   
   return (
     <Card className={classes.root}>
       <Box className={classes.container}>
         <Typography variant="h1">Print a document</Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          startIcon={<Add />}
-        >
-          Upload file
-        </Button>
+        <Box display="flex" alignItems="center">
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<Add />}
+            onClick={getFileName}
+            className={classes.rightSpacing}
+          >
+            Upload file
+          </Button>
+          <Typography variant="body2">{fileName}</Typography>
+        </Box>
         <FormControl className={classes.formControl}>
           <InputLabel>Choose Printer</InputLabel>
           <Select
