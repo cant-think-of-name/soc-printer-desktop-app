@@ -23,12 +23,14 @@ export default function Print() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
     gridTemplateAreas: `
     "quota queue queue"
     "links queue queue"
     "settings preview preview"
     `,
     [theme.breakpoints.down('sm')]: {
+      gridTemplateColumns: '1fr',
       gridTemplateAreas: `
       "quota"
       "links"
