@@ -11,10 +11,10 @@ export default function PrintPreview() {
         <Typography variant="h1">Print Preview</Typography>
       </Box>
     </Card>
-  )
+  );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     gridArea: "preview",
   },
@@ -24,4 +24,4 @@ const useStyles = makeStyles((theme) => ({
     width: 'fit-content',
     alignItems: 'flex-start',
   },
-}))
+}));

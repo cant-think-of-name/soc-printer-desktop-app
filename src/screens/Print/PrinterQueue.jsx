@@ -10,7 +10,7 @@ export default function PrinterQueue() {
   }, {
     printer: 'psc011',
     existingJobs: 5,
-  }]
+  }];
   return (
     <Card className={classes.root}>
       <Box className={classes.container}>
@@ -23,8 +23,8 @@ export default function PrinterQueue() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {printerList.map(({printer, existingJobs}) => (
-              <TableRow>
+            {printerList.map(({ printer, existingJobs }) => (
+              <TableRow key={printer}>
                 <TableCell>{printer}</TableCell>
                 <TableCell>{existingJobs}</TableCell>
               </TableRow>
@@ -33,10 +33,10 @@ export default function PrinterQueue() {
         </Table>
       </Box>
     </Card>
-  )
+  );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     gridArea: "queue",
   },
@@ -46,4 +46,4 @@ const useStyles = makeStyles((theme) => ({
     width: 'fit-content',
     alignItems: 'flex-start',
   },
-}))
+}));

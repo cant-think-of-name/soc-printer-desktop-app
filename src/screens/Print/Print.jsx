@@ -17,7 +17,7 @@ export default function Print() {
       <PrintSettings />
       <PrintPreview />
     </Box>
-  )
+  );
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -39,4 +39,4 @@ const useStyles = makeStyles((theme) => ({
     },
     gridGap: '1rem',
   },
-}))
+}));

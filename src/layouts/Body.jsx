@@ -8,12 +8,12 @@ export default function Body() {
     <Container className={classes.root}>
       <Print />
     </Container>
-  )
+  );
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(3, 0),
-  }
+  },
 }));
 

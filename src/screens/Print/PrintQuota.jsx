@@ -20,7 +20,7 @@ export default function PrintQuota() {
         <Typography variant="caption">Coloured Pages Left</Typography>
       </Card>
     </Box>
-  )
+  );
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -41,4 +41,4 @@ const useStyles = makeStyles((theme) => ({
       gridRowGap: theme.spacing(3),
     },
   },
-}))
+}));

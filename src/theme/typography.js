@@ -7,4 +7,4 @@ export default {
       fontWeight: 400,
     },
   },
-}
+};

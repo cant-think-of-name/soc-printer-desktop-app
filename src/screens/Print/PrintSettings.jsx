@@ -34,7 +34,7 @@ export default function PrintSettings() {
             value={selectedPrinter}
             onChange={handleChangePrinter}
           >
-            {printerList.map(printer => <MenuItem value={printer}>{printer}</MenuItem>)}
+            {printerList.map(printer => <MenuItem key={printer} value={printer}>{printer}</MenuItem>)}
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -43,15 +43,15 @@ export default function PrintSettings() {
             value={numberOfPages}
             onChange={handleChangePages}
           >
-            {pageNumberList.map(page => <MenuItem value={page}>{page}</MenuItem>)}
+            {pageNumberList.map(page => <MenuItem key={page} value={page}>{page}</MenuItem>)}
           </Select>
         </FormControl>
         <FormControl component="fieldset" className={classes.formControl}>
           <FormLabel component="legend">Page Range</FormLabel>
           <RadioGroup row value={pageRange} onChange={handleChangePageRange}>
             {pageRangeOptions.map(option => (
-              <FormControlLabel value={option} control={<Radio />} label={option} />
-              )
+              <FormControlLabel key={option} value={option} control={<Radio />} label={option} />
+            ),
             )}
           </RadioGroup>
         </FormControl>
@@ -68,7 +68,7 @@ export default function PrintSettings() {
         <Button variant="contained" color="primary">Print</Button>
       </Box>
     </Card>
-  )
+  );
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -86,4 +86,4 @@ const useStyles = makeStyles((theme) => ({
   rightSpacing: {
     marginRight: theme.spacing(3),
   },
-}))
+}));

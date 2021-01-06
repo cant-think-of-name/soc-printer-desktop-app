@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Card, Link, Table, TableBody, TableCell, TableHead, TableRow, Typography, makeStyles } from '@material-ui/core';
+import { Box, Card, Link, Typography, makeStyles } from '@material-ui/core';
 
 export default function QuickLinks() {
   const classes = useStyles();
@@ -20,10 +20,10 @@ export default function QuickLinks() {
         </Typography>
       </Box>
     </Card>
-  )
+  );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     gridArea: "links",
   },
@@ -32,4 +32,4 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'flex-start',
   },
-}))
+}));

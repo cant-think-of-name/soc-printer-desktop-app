@@ -23,7 +23,7 @@
     "react-test": "react-scripts test",
     "react-eject": "react-scripts eject",
     "electron-build": "electron-builder",
-    "lint": "./node_modules/.bin/eslint src/** --fix",
+    "lint": "./node_modules/.bin/eslint --ext .jsx --ext .js src/ --fix",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import { Header, Body, Footer } from "./layouts";

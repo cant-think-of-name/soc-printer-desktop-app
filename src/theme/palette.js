@@ -4,4 +4,4 @@ export default {
       main: "#2196F3",
     },
   },
-}
+};
