@@ -5,7 +5,7 @@ import { Container, makeStyles } from "@material-ui/core";
 export default function Body() {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
+    <Container fixed className={classes.root}>
       <Print />
     </Container>
   );
