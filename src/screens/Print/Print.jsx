@@ -4,12 +4,16 @@ import { Box, Container, makeStyles } from '@material-ui/core';
 import PrintSettings from './PrintSettings';
 import PrintPreview from './PrintPreview';
 import PrintQuota from './PrintQuota';
+import PrinterQueue from './PrinterQueue';
 
 export default function Print() {
   const classes = useStyles();
   return (
     <Box>
-      <PrintQuota />
+      <Box className={classes.root}>
+        <PrintQuota />
+        <PrinterQueue />
+      </Box>
       <Box className={classes.root}>
         <PrintSettings />
         <PrintPreview />
