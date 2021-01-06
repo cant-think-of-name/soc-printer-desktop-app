@@ -14,7 +14,7 @@ export default function PrintQuota() {
         <Typography variant="h1">50</Typography>
         <Typography variant="caption">Pages Left</Typography>
       </Card>
-      <Card className={clsx(classes.rightSpacing, classes.card)}>
+      <Card className={classes.card}>
         <ColorLens />
         <Typography variant="h1">0</Typography>
         <Typography variant="caption">Coloured Pages Left</Typography>
@@ -25,17 +25,14 @@ export default function PrintQuota() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
     gridArea: "quota",
     textAlign: 'center',
     '& .MuiSvgIcon-root': {
       width: '3rem',
       height: '3rem',
     },
-  },
-  card: {
-    width: 150,
-    height: 80
   },
   rightSpacing: {
     marginRight: theme.spacing(3),
