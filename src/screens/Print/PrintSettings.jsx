@@ -2,20 +2,18 @@ import React from 'react';
 
 import { Box, Button, Card, FormControl, FormLabel, FormControlLabel, InputLabel, MenuItem, Select, Radio, RadioGroup, TextField, Typography, makeStyles } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
+import { useHandleChange } from 'hooks';
 
 export default function PrintSettings() {
   const classes = useStyles();
   const printerList = ['psc008', 'psc011'];
-  const [selectedPrinter, setSelectedPrinter] = React.useState(printerList[0]);
-  const handleChangePrinter = (event) => setSelectedPrinter(event.target.value);
+  const [selectedPrinter, handleChangePrinter] = useHandleChange(printerList[0]);
 
   const pageNumberList = [1, 2, 4, 8];
-  const [numberOfPages, setNumberOfPages] = React.useState(pageNumberList[0]);
-  const handleChangePages = (event) => setNumberOfPages(event.target.value);
+  const [numberOfPages, handleChangePages] = useHandleChange(pageNumberList[0]);
 
   const pageRangeOptions = ['All', 'Custom'];
-  const [pageRange, setPageRange] = React.useState(pageRangeOptions[0]);
-  const handleChangePageRange = (event) => setPageRange(event.target.value);
+  const [pageRange, handleChangePageRange] = useHandleChange(pageRangeOptions[0]);
   
   return (
     <Card className={classes.root}>
