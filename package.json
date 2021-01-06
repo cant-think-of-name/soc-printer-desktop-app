@@ -1,5 +1,5 @@
 {
-  "name": "display",
+  "name": "soc-printer-desktop-app",
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
