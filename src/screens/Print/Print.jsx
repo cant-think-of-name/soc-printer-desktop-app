@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { Container, makeStyles } from '@material-ui/core';
+import { Box, Container, makeStyles } from '@material-ui/core';
 import PrintSettings from './PrintSettings';
 import PrintPreview from './PrintPreview';
+import PrintQuota from './PrintQuota';
 
 export default function Print() {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
-      <PrintSettings />
-      <PrintPreview />
-    </Container>
+    <Box>
+      <PrintQuota />
+      <Box className={classes.root}>
+        <PrintSettings />
+        <PrintPreview />
+      </Box>
+    </Box>
   )
 }
 
