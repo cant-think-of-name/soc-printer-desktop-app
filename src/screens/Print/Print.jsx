@@ -28,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
     "links queue"
     "settings preview"
     `,
+    [theme.breakpoints.down('sm')]: {
+      gridTemplateAreas: `
+      "quota"
+      "links"
+      "queue"
+      "settings"
+      "preview"
+      `,
+    },
     gridGap: '1rem',
   },
 }))
