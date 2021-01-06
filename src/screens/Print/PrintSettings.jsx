@@ -73,12 +73,11 @@ export default function PrintSettings() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: theme.spacing(50),
+    gridArea: "settings",
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
-    width: 'fit-content',
     alignItems: 'flex-start',
   },
   formControl: {

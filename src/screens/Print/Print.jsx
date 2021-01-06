@@ -9,22 +9,23 @@ import PrinterQueue from './PrinterQueue';
 export default function Print() {
   const classes = useStyles();
   return (
-    <Box>
-      <Box className={classes.root}>
-        <PrintQuota />
-        <PrinterQueue />
-      </Box>
-      <Box className={classes.root}>
-        <PrintSettings />
-        <PrintPreview />
-      </Box>
+    <Box className={classes.root}>
+      <PrintQuota />
+      <PrinterQueue />
+      <PrintSettings />
+      <PrintPreview />
     </Box>
   )
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    display: 'grid',
+    gridTemplateAreas: `
+    "quota quota"
+    "queue queue"
+    "settings preview"
+    `,
+    gridGap: '1rem',
   },
 }))

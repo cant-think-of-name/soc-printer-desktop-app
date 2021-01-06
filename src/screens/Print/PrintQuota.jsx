@@ -26,6 +26,7 @@ export default function PrintQuota() {
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    gridArea: "quota",
     textAlign: 'center',
     '& .MuiSvgIcon-root': {
       width: '3rem',

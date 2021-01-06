@@ -38,7 +38,7 @@ export default function PrinterQueue() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: theme.spacing(50),
+    gridArea: "queue",
   },
   container: {
     display: 'flex',

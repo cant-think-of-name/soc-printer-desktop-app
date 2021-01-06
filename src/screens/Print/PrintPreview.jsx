@@ -16,7 +16,7 @@ export default function PrintPreview() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: theme.spacing(50),
+    gridArea: "preview",
   },
   container: {
     display: 'flex',
