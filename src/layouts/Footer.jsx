@@ -64,8 +64,6 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "1px solid #E7E7E7",
     textAlign: "center",
     ...theme.typography.body1,
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
   },
   footer: {
